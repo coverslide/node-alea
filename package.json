@@ -6,7 +6,7 @@
   "scripts": {
     "test": "node test"
   },
-  "repository": "",
+  "repository": "https://github.com/coverslide/node-alea",
   "author": "",
   "license": "BSD"
 }
