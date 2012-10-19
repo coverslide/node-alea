@@ -1,0 +1,12 @@
+{
+  "name": "alea",
+  "version": "0.0.1",
+  "description": "Implementation of the Alea PRNG by Johannes Baagøe",
+  "main": "alea.js",
+  "scripts": {
+    "test": "node test"
+  },
+  "repository": "",
+  "author": "",
+  "license": "BSD"
+}
