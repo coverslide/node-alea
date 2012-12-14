@@ -13,4 +13,22 @@ var c = prng3()
 assert.equal(a, c)
 assert.notEqual(a, b)
 
+prng1()
+prng1()
+prng1()
+
+var e = prng1.export()
+
+var prng4 = Alea.import(e)
+
+assert.equal(prng1(), prng4())
+assert.equal(prng1(), prng4())
+assert.equal(prng1(), prng4())
+
+prng2.import(prng1.export())
+
+assert.equal(prng1(), prng2())
+assert.equal(prng1(), prng2())
+assert.equal(prng1(), prng2())
+
 console.log("All tests Passed!")

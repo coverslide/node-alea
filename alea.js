@@ -46,11 +46,26 @@ function Alea() {
       return random() + 
         (random() * 0x200000 | 0) * 1.1102230246251565e-16; // 2^-53
     };
+    random.export = function(){
+      return [s0, s1, s2, c]
+    };
+    random.import  = function(i){
+      s0 = +i[0] || 0;
+      s1 = +i[1] || 0;
+      s2 = +i[2] || 0;
+      c = +i[3] || 0;
+    };
     random.version = 'Alea 0.9';
     random.args = args;
     return random;
 
   } (Array.prototype.slice.call(arguments)));
+};
+
+Alea.import = function(i){
+  var random = new Alea();
+  random.import(i);
+  return random;
 };
 
 function Mash() {

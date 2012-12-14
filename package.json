@@ -1,12 +1,19 @@
 {
   "name": "alea",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "description": "Implementation of the Alea PRNG by Johannes Baagøe",
   "main": "alea.js",
   "scripts": {
     "test": "node test"
   },
-  "repository": "https://github.com/coverslide/node-alea",
-  "author": "",
-  "license": "BSD"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/coverslide/node-alea"
+  },
+  "author": {
+    "name": "Richard Hoffman",
+    "email": "coverslide@gmail.com",
+    "url": "http://coverslide.me"
+  },
+  "license": "BSD",
 }
