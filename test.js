@@ -29,6 +29,22 @@ test("make sure two seeded values are the same", function(t){
   t.end()
 })
 
+test("Compare known values", function(t){
+
+  var prng1 = Alea(12345)
+
+  //predefined numbers
+  var values = [
+    0.27138191112317145,
+    0.19615925149992108,
+    0.6810678059700876
+  ]
+
+  t.equal(prng1(), values[0], 'check value 1')
+  t.equal(prng1(), values[1], 'check value 2')
+  t.equal(prng1(), values[2], 'check value 3')
+})
+
 test("Import with Alea.importState()", function(t){
 
   var prng1 = Alea(200)
