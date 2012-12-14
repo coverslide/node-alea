@@ -22,7 +22,7 @@ JavaScript's Math.random() is fast, but has problems. First, it isn't seedable, 
 
 ## Additions
 
-Also adds the ability to sync up two Alea PRNGs via the import and export methods. While you can initialize two Alea PRNGs with the same seed, you cannot sync up a new PRNG after an old PRNG has already started running. This is useful for games where a new player joins and their local PRNG should sync up with the remote one. 
+Also adds the ability to sync up two Alea PRNGs via the importState and exportState methods. While you can initialize two Alea PRNGs with the same seed, you cannot sync up a new PRNG after an old PRNG has already started running. This is useful for games where a new player joins and their local PRNG should sync up with the remote one. 
 
 	var prng1 = new Alea(200)
 
@@ -31,7 +31,7 @@ Also adds the ability to sync up two Alea PRNGs via the import and export method
 
 	// after generating a few random numbers, we will initialize a new PRNG
 
-	var prng2 = Alea.import(prng1.export())
+	var prng2 = Alea.importState(prng1.exportState())
 
 	// this should echo true, true, true
 	console.log(prng2() == prng1())
