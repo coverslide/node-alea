@@ -1,6 +1,6 @@
 {
   "name": "alea",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "Implementation of the Alea PRNG by Johannes Baagøe",
   "main": "alea.js",
   "scripts": {
@@ -28,5 +28,5 @@
       "safari": [ 5.1 ]
     }
   },
-  "license": "WTFPL"
+  "license": "MIT"
 }
