@@ -6,6 +6,7 @@
   "scripts": {
     "test": "node test"
   },
+  "keywords": ["badass", "pseudo", "random", "number","generator"],
   "devDependencies":{
     "tape": "~0.1.1"
   },
