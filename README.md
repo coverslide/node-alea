@@ -6,7 +6,7 @@ A simple copy-and-paste implementation of Johannes Baagøe's Alea PRNG
 
 Mostly packaged so I can easily include it in my projeccts. Nothing more
 
-JavaScript's Math.random() is fast, but has problems. First, it isn't seedable, second, its randomness leaves a bit to be desired. The Mersenne Twister algorithm is a popular algorithm to replace random implemenetations, and has even been ported to JavaScript. Unfortunately, it depends on bitwise operations which can be slow in JavaScript. [Johannes Baagøe](http://baagoe.org/) has done some great work in trying to find a more modern PRNG algorithm that performs well on JavaScript, and Alea seems to be the one that has come out ahead ([benchmarks](http://jsperf.com/prng-comparison)).
+JavaScript's Math.random() is fast, but has problems. First, it isn't seedable, second, its randomness leaves a bit to be desired. [Johannes Baagøe](http://baagoe.org/) has done some great work in trying to find a more modern PRNG algorithm that performs well on JavaScript, and Alea seems to be the one that has come out ahead ([benchmarks](http://jsperf.com/prng-comparison)).
 
 ## Installation
 
@@ -22,7 +22,7 @@ JavaScript's Math.random() is fast, but has problems. First, it isn't seedable, 
 
 ## Additions
 
-Also adds the ability to sync up two Alea PRNGs via the importState and exportState methods. While you can initialize two Alea PRNGs with the same seed, you cannot sync up a new PRNG after an old PRNG has already started running. This is useful for games where a new player joins and their local PRNG should sync up with the remote one. 
+Also adds the ability to sync up two Alea PRNGs via the importState and exportState methods.
 
 	var prng1 = new Alea(200)
 
@@ -37,6 +37,8 @@ Also adds the ability to sync up two Alea PRNGs via the importState and exportSt
 	console.log(prng2() == prng1())
 	console.log(prng2() == prng1())
 	console.log(prng2() == prng1())
+
+The theory behind this is that while a server is running a simulation (for example, a game) and clients connect to the server, each client will run its own simulation without having to depend 100% on the server for every update of the simulation state. By importing the current generator state from the server, a client can join in at any time and have an accurate simulation fully in sync with the server.
 
 ## Acknowledgements
 
