@@ -29,7 +29,7 @@ test("make sure two seeded values are the same", function(t){
   t.end()
 })
 
-test("Compare known values", function(t){
+test("Known values test", function(t){
 
   var prng1 = Alea(12345)
 
@@ -43,6 +43,44 @@ test("Compare known values", function(t){
   t.equal(prng1(), values[0], 'check value 1')
   t.equal(prng1(), values[1], 'check value 2')
   t.equal(prng1(), values[2], 'check value 3')
+
+  t.end()
+})
+
+test("Uint32 test", function(t){
+
+  var prng1 = Alea(12345)
+
+  //predefined numbers
+  var values = [
+    1165576433,
+    842497570,
+    2925163953
+  ]
+
+  t.equal(prng1.uint32(), values[0], 'check value 1')
+  t.equal(prng1.uint32(), values[1], 'check value 2')
+  t.equal(prng1.uint32(), values[2], 'check value 3')
+
+  t.end()
+})
+
+test("Fract53 test", function(t){
+
+  var prng1 = Alea(12345)
+
+  //predefined numbers
+  var values = [
+    0.27138191116884325,
+    0.6810678062004586,
+    0.3407802057882554
+  ]
+
+  t.equal(prng1.fract53(), values[0], 'check value 1')
+  t.equal(prng1.fract53(), values[1], 'check value 2')
+  t.equal(prng1.fract53(), values[2], 'check value 3')
+
+  t.end()
 })
 
 test("Import with Alea.importState()", function(t){
@@ -99,4 +137,6 @@ test("Resync two differring prngs with prng.importState()", function(t){
   t.equal(a1, a2, 'return values should sync based on number of calls, call 1')
   t.equal(b1, b2, 'return values should sync based on number of calls, call 2')
   t.equal(c1, c2, 'return values should sync based on number of calls, call 3')
+
+  t.end()
 })
