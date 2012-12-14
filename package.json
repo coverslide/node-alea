@@ -1,10 +1,13 @@
 {
   "name": "alea",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Implementation of the Alea PRNG by Johannes Baagøe",
   "main": "alea.js",
   "scripts": {
     "test": "node test"
+  },
+  "devDependencies":{
+    "tape": "~0.1.1"
   },
   "repository": {
     "type": "git",
@@ -15,5 +18,8 @@
     "email": "coverslide@gmail.com",
     "url": "http://coverslide.me"
   },
-  "license": "BSD"
+  "testling": {
+    "files": "test.js"
+  },
+  "license": "WTFPL"
 }
