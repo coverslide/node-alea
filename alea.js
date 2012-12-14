@@ -1,6 +1,8 @@
 // From http://baagoe.com/en/RandomMusings/javascript/
 module.exports = Alea;
 
+'use strict'
+
 function Alea() {
   return (function(args) {
     // Johannes Baagøe <baagoe@baagoe.com>, 2010
@@ -46,10 +48,10 @@ function Alea() {
       return random() + 
         (random() * 0x200000 | 0) * 1.1102230246251565e-16; // 2^-53
     };
-    random['export'] = random._export = function(){
+    random.exportState = function(){
       return [s0, s1, s2, c];
     };
-    random['import'] = random._import = function(i){
+    random.importState = function(i){
       s0 = +i[0] || 0;
       s1 = +i[1] || 0;
       s2 = +i[2] || 0;
@@ -62,9 +64,9 @@ function Alea() {
   } (Array.prototype.slice.call(arguments)));
 }
 
-Alea['import'] = Alea._import = function(i){
+Alea.importState = function(i){
   var random = new Alea();
-  random['import'](i);
+  random.importState(i);
   return random;
 };
 

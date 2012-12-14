@@ -1,6 +1,6 @@
 {
   "name": "alea",
-  "version": "0.0.5",
+  "version": "0.0.7",
   "description": "Implementation of the Alea PRNG by Johannes Baagøe",
   "main": "alea.js",
   "scripts": {

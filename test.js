@@ -1,6 +1,8 @@
 var test = require('tape')
 var Alea = require('./alea')
 
+'use strict'
+
 test("make sure two seeded values are the same", function(t){
 
   var prng1 = Alea(1)
@@ -27,7 +29,7 @@ test("make sure two seeded values are the same", function(t){
   t.end()
 })
 
-test("Import with Alea.import()", function(t){
+test("Import with Alea.importState()", function(t){
 
   var prng1 = Alea(200)
 
@@ -36,16 +38,16 @@ test("Import with Alea.import()", function(t){
   prng1()
   prng1()
 
-  var e = prng1['export']()
+  var e = prng1.exportState()
 
-  var prng4 = Alea['import'](e)
+  var prng4 = Alea.importState(e)
 
   t.equal(prng1(), prng4(), 'synced prngs, call 1')
   t.equal(prng1(), prng4(), 'synced prngs, call 2')
   t.equal(prng1(), prng4(), 'synced prngs, call 3')
 })
 
-test("Resync two differring prngs with prng.import()", function(t){
+test("Resync two differring prngs with prng.importState()", function(t){
   var prng1 = Alea(200000)
   var prng2 = Alea(9000)
 
@@ -56,7 +58,7 @@ test("Resync two differring prngs with prng.import()", function(t){
   t.notEqual(prng1(), prng2(), 'just generating randomness, call 3')
 
   // sync prng2 to prng1
-  prng2['import'](prng1['export']())
+  prng2.importState(prng1.exportState())
 
   t.equal(prng1(), prng2(), 'imported prng, call 1')
   t.equal(prng1(), prng2(), 'imported prng, call 2')
