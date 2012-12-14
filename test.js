@@ -36,9 +36,9 @@ test("Import with Alea.import()", function(t){
   prng1()
   prng1()
 
-  var e = prng1.export()
+  var e = prng1['export']()
 
-  var prng4 = Alea.import(e)
+  var prng4 = Alea['import'](e)
 
   t.equal(prng1(), prng4(), 'synced prngs, call 1')
   t.equal(prng1(), prng4(), 'synced prngs, call 2')
@@ -56,7 +56,7 @@ test("Resync two differring prngs with prng.import()", function(t){
   t.notEqual(prng1(), prng2(), 'just generating randomness, call 3')
 
   // sync prng2 to prng1
-  prng2.import(prng1.export())
+  prng2['import'](prng1['export']())
 
   t.equal(prng1(), prng2(), 'imported prng, call 1')
   t.equal(prng1(), prng2(), 'imported prng, call 2')
