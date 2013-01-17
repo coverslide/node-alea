@@ -4,7 +4,7 @@
   } else if (typeof define === 'function' && define.amd) {
       define(factory);
   } else {
-      root.returnExports = factory();
+      root.Alea = factory();
   }
 }(this, function () {
 
