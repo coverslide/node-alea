@@ -99,6 +99,8 @@ test("Import with Alea.importState()", function(t){
   t.equal(prng1(), prng4(), 'synced prngs, call 1')
   t.equal(prng1(), prng4(), 'synced prngs, call 2')
   t.equal(prng1(), prng4(), 'synced prngs, call 3')
+
+  t.end()
 })
 
 test("Resync two differring prngs with prng.importState()", function(t){
