@@ -1,7 +1,5 @@
 # Alea
 
-[![browser support](http://ci.testling.com/coverslide/node-alea.png)](http://ci.testling.com/coverslide/node-alea)
-
 A simple copy-and-paste implementation of Johannes Baagøe's Alea PRNG
 
 Mostly packaged so I can easily include it in my projeccts. Nothing more
