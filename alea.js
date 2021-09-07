@@ -59,6 +59,7 @@
         s1 = s2;
         return s2 = t - (c = t | 0);
       };
+      random.next = random;
       random.uint32 = function() {
         return random() * 0x100000000; // 2^32
       };
