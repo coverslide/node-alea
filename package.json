@@ -1,14 +1,20 @@
 {
-  "name": "alea",
-  "version": "1.0.0",
+  "name": "alea2",
+  "version": "2.0.0",
   "description": "Implementation of the Alea PRNG by Johannes Baagøe",
   "main": "alea.js",
   "scripts": {
     "test": "node test"
   },
-  "keywords": ["badass", "pseudo", "random", "number","generator"],
-  "devDependencies":{
-    "tape": "~0.1.1"
+  "keywords": [
+    "badass",
+    "pseudo",
+    "random",
+    "number",
+    "generator"
+  ],
+  "devDependencies": {
+    "tape": "^5.3.1"
   },
   "repository": {
     "type": "git",
@@ -22,11 +28,32 @@
   "testling": {
     "files": "test.js",
     "browsers": {
-      "ie": [ 6, 7, 8, 9 ],
-      "ff": [ 3.6, 4, 17, "nightly" ],
-      "chrome": [ 22, 23, "canary" ],
-      "opera": [ 10, 11, 12, "next" ],
-      "safari": [ 5.1 ]
+      "ie": [
+        6,
+        7,
+        8,
+        9
+      ],
+      "ff": [
+        3.6,
+        4,
+        17,
+        "nightly"
+      ],
+      "chrome": [
+        22,
+        23,
+        "canary"
+      ],
+      "opera": [
+        10,
+        11,
+        12,
+        "next"
+      ],
+      "safari": [
+        5.1
+      ]
     }
   },
   "license": "MIT"
