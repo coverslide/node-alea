@@ -3,6 +3,7 @@
   "version": "1.0.1",
   "description": "Implementation of the Alea PRNG by Johannes Baagøe",
   "main": "alea.js",
+  "module": "alea.esm.js",
   "scripts": {
     "test": "node test"
   },
